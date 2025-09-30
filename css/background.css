@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+.wrapper {
+  overflow: hidden;
+  background-color: #111;
+  z-index: -1;
+  position: absolute;
+}
+canvas {
+  display: block;
+}
+

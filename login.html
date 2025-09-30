@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Game</title>
+    <link rel="stylesheet" href="css/background.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <section>
+      <div class="wrapper">
+        <canvas id="effect"></canvas>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cart">
+          <h1 class="cart-element">FlagQuest</h1>
+          <input
+            class="cart-element"
+            placeholder="Enter Username"
+            id="user-name"
+            type="text"
+            
+          />
+          <p id="paragraf">
+            Username cannot contain spaces
+          </p>
+          <input
+            class="cart-element"
+            placeholder="Enter password"
+            id="user-password"
+            type="password"
+          />
+
+          <button class="cart-element" id="Login">Sing Up</button>
+          <p>If you don't have an account,<a href="singup.html"> Sing Up.</a></p>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
+    <script>
+      const bcrypt = dcodeIO.bcrypt;
+    </script>
+    <script src="js/identic.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>
