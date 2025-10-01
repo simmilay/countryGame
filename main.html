@@ -9,6 +9,28 @@
   </head>
   <body>
     <section>
+      <div class="modal-container" id="modal_container">
+        <div class="modal">
+          <div class="absolute-btn">
+            <button id="close">&times;</button>
+          </div>
+          <h2>Chose Your Mood</h2>
+          <div class="modal-buttons">
+            <button id="easy" class="modal-button" onclick="getGameMod(this)">
+              Easy
+            </button>
+            <button id="middle" class="modal-button" onclick="getGameMod(this)">
+              Middle
+            </button>
+            <button id="hard" class="modal-button" onclick="getGameMod(this)">
+              Hard
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
       <div class="wrapper">
         <canvas id="effect"></canvas>
       </div>
@@ -18,10 +40,8 @@
       <div class="container">
         <div class="cart">
           <h1>FlagQuest</h1>
-          <button class="cart-element">
-            <a
-              href="game.html"
-              style="text-decoration: none; color: rgba(59, 75, 43, 0.712)"
+          <button id="play" class="cart-element">
+            <a style="text-decoration: none; color: rgba(59, 75, 43, 0.712)"
               >PLAY</a
             >
           </button>

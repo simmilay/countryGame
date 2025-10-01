@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/game.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/background.css" />
+    <link rel="stylesheet" href="css/game.css" />
     <title>FlagQuest</title>
-</head>
-<body>
+  </head>
+  <body>
+    
+
     <section>
       <div class="wrapper">
         <canvas id="effect"></canvas>
       </div>
     </section>
-        
+
+    <section>
+      <div class="container">
+        <div class="cart">
+          <img src="https://flagcdn.com/w320/lv.png" alt="" class="cart-flag" />
+          <div class="cart-line">
+            <input type="text" id="countryName" class="cart-element" />
+            <button class="cart-element">&#10004;</button>
+          </div>
+          <div class="cart-line">
+            <input
+              type="text"
+              id="countryCapital"
+              class="cart-element"
+            /><button class="cart-element">&#10004;</button>
+          </div>
+          <div class="cart-line">
+            <input
+              type="text"
+              id="countryPapilation"
+              class="cart-element"
+            /><button class="cart-element">&#10004;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="js/background.js"></script>
     <script src="js/game.js"></script>
-
-</body>
+  </body>
 </html>

@@ -38,3 +38,76 @@ h1{
     margin-bottom: 25px;
     color: rgb(31, 61, 30);
 }
+
+/*Modal*/
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  
+}
+
+.modal-container.show {
+  z-index: 1000;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+#close {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  font-size: 20px;
+  color: #888;
+}
+
+#close:hover {
+  color: #333;
+}
+
+.modal {
+  background-color: rgba(241, 239, 239, 0.977)   ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 30px 50px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 350px;
+  height: 200px;
+}
+.modal-buttons{
+  display: grid;
+}
+.modal-button{
+  background-color: rgb(62, 66, 62);
+  margin: 7px;
+  height: 35px;
+  border: none;
+  border-radius: 8px;
+  color: rgba(230, 233, 228, 0.712);
+     box-shadow: rgba(50, 93, 64, 0.332) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+}
+
+.modal-button:hover{
+   box-shadow: rgba(50, 93, 62, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.modal h2{
+  color:  rgb(62, 66, 62);
+  margin-bottom: 25px;
+}
+
