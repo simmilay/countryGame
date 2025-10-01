@@ -1,20 +1,15 @@
-/*
-  bcrypt.compare(userPasswordLog, hash, (err, res) => {
-    if (err) {
-      alert("username or password is incorrect");
-      console.error(err);
-      return;
-    }
-    console.log(res); //true or false
-  });
- */
+    let temporaryListC = [];
 
-window.addEventListener("load", function chekLocalStorage() {
+
+/* if (!JSON.parse(localStorage.getItem("users"))) {
+    localStorage.setItem("users", JSON.stringify(temporaryListC));  
+} */
+/* window.addEventListener("load", function chekLocalStorage() {
   if (!JSON.parse(localStorage.getItem("users"))) {
     let temporaryListC = [];
     localStorage.setItem("users", JSON.stringify(temporaryListC));
   }
-});
+}); */
 
 const userName = document.getElementById("user-name");
 const userPassword = document.getElementById("user-password");
@@ -29,15 +24,12 @@ let p = document.getElementById("paragraf");
     p.innerText = "Username cannot contain spaces";
   }
 } */
-userName.addEventListener("click", function()
-     p.style.color = ("black");
-     p.innerText = "Username cannot contain spaces !"
-
+userName.addEventListener("click", function () {
+  p.style.color = "black";
+  p.innerText = "Username cannot contain spaces !";
 });
 
 singupBtn.addEventListener("click", async function addUser() {
-    p.style.color = ("red");
-
   if (userName.value === "") {
     alert("enter your username");
   }
@@ -47,23 +39,33 @@ singupBtn.addEventListener("click", async function addUser() {
     return;
   }
 
-  if(!userGenerator(userName.value)){
+  if (!userGenerator(userName.value)) {
     return;
   }
 
-
+  function idGenerator() {
+    const newId =  Date.now() + Math.floor(Math.random() * 100250 + 10000) + 25978;
+    let user = getLocalStorage("users");
+    const idCheck = user.find((element) => element.id === newId);
+    if(idCheck){
+      return idGenerator();
+    }
+    return newId;
+  }
 
   const hashPass = await bcrypt.hash(userPassword.value, 10);
   console.log(hashPass);
 
   const newUser = {
+    id: idGenerator(),
     userName: userName.value,
     userPassword: hashPass,
-    active_users: false,
     max_point: null,
   };
 
-  const user = getLocalStorage("users");
+   let user = getLocalStorage("users") || [];
+   if (!Array.isArray(user)) user  = [];
+
   user.push(newUser);
 
   setLocalStorage("users", user);
@@ -71,7 +73,7 @@ singupBtn.addEventListener("click", async function addUser() {
   userName.value = "";
   userPassword.value = "";
   alert("Registration completed successfully");
-  window.location.href=('/login.html');
+  window.location.href = "/login.html";
 });
 
 function userGenerator(userName) {
@@ -83,8 +85,8 @@ function userGenerator(userName) {
 
   if (checkUserName) {
     const p = document.getElementById("paragraf");
-    p.innerText = "This username is being used by someone else. ";
-    p.style.color = ("red");
+    p.innerText = "This username is being used by someone else ! ";
+    p.style.color = "red";
     return false;
   } else {
     return true;

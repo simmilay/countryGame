@@ -3,5 +3,5 @@ function getLocalStorage(key) {
 }
 
 function setLocalStorage(key, value) {
-  return localStorage.setItem(key, JSON.stringify(value));
+  return  localStorage.setItem(key, JSON.stringify(value))
 }
