@@ -8,7 +8,36 @@
     <title>FlagQuest</title>
   </head>
   <body>
-    
+    <section>
+      <div class="modal-container" id="modal_container">
+        <div class="modal">
+          <div class="absolute-btn">
+          </div>
+          <h1>ANSWERS</h1>
+          <div class="modal-elements">
+            <input
+              id="answer-name"
+              type="text"
+              class="modal-element" 
+              disabled
+            />
+            <input
+              id="answer-capital"
+              type="text"
+              class="modal-element"
+              disabled
+            />
+            <input
+              id="answer-population"
+              type="text"
+              class="modal-element"
+              disabled
+            /><br />
+            <button id="next" class="modal-button">Next Question</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section>
       <div class="wrapper">
@@ -19,30 +48,44 @@
     <section>
       <div class="container">
         <div class="cart">
-          <img src="https://flagcdn.com/w320/lv.png" alt="" class="cart-flag" />
-          <div class="cart-line">
-            <input type="text" id="countryName" class="cart-element" />
-            <button class="cart-element">&#10004;</button>
-          </div>
-          <div class="cart-line">
-            <input
-              type="text"
-              id="countryCapital"
-              class="cart-element"
-            /><button class="cart-element">&#10004;</button>
-          </div>
-          <div class="cart-line">
-            <input
-              type="text"
-              id="countryPapilation"
-              class="cart-element"
-            /><button class="cart-element">&#10004;</button>
-          </div>
+          <img src="" alt="" id="flag" class="cart-flag" />
+          <h5 id="progress">1st Question</h5>
+          <h5 id="score"></h5>
+
+          <input
+            type="text"
+            id="countryName"
+            placeholder="Enter The Country Name..."
+            class="cart-element"
+          />
+
+          <input
+            type="text"
+            id="countryCapital"
+            placeholder="Enter The Capital..."
+            class="cart-element"
+          />
+
+          <input
+            type="text"
+            id="countryPopulation"
+            placeholder="Enter The Population..."
+            class="cart-element"
+          />
+          <button id="control" class="cart-element">Check</button>
+          <button
+            style="background-color: rgba(0, 0, 0, 0.329); color: aliceblue"
+            class="cart-element"
+            id="back"
+          >
+            Back To Home Page
+          </button>
         </div>
       </div>
     </section>
 
     <script src="js/background.js"></script>
+    <script src="js/identic.js"></script>
     <script src="js/game.js"></script>
   </body>
 </html>
