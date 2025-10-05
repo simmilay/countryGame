@@ -3,6 +3,12 @@ window.addEventListener("load", function () {
     let temporaryListGame = [];
     localStorage.setItem("gameMod", JSON.stringify(temporaryListGame));
   }
+  let activeUser = getLocalStorage("activeUser");
+
+if (!activeUser || activeUser.length === 0) {
+    console.log("No active user found, redirecting to login...");
+    window.location.href = "login.html";
+}
 });
 
 const logout = document.getElementById("logout");

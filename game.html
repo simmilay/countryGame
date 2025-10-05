@@ -11,14 +11,13 @@
     <section>
       <div class="modal-container" id="modal_container">
         <div class="modal">
-          <div class="absolute-btn">
-          </div>
+          <div class="absolute-btn"></div>
           <h1>ANSWERS</h1>
           <div class="modal-elements">
             <input
               id="answer-name"
               type="text"
-              class="modal-element" 
+              class="modal-element"
               disabled
             />
             <input
@@ -40,6 +39,29 @@
     </section>
 
     <section>
+      <div class="modal-container-finish" id="modal-finish">
+        <div class="modal-finish">
+          <div class="absolute-btn">
+            <button id="close">&times;</button>
+          </div>
+          <h2 id="greeting">İYİ DENEME</h2>
+          <h3 id="score2"></h3>
+          <div class="modal-buttons-finish">
+            <button id="play-again" class="modal-button-finish" >
+              Play Again
+            </button>
+            <button id="scoreboard" class="modal-button-finish" >
+              ScoreBoard
+            </button>
+            <button id="logout" class="modal-button-finish" >
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
       <div class="wrapper">
         <canvas id="effect"></canvas>
       </div>
@@ -50,7 +72,7 @@
         <div class="cart">
           <img src="" alt="" id="flag" class="cart-flag" />
           <h5 id="progress">1st Question</h5>
-          <h5 id="score"></h5>
+          <h5 id="score">Score: </h5>
 
           <input
             type="text"

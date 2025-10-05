@@ -7,6 +7,7 @@ window.addEventListener("load", function chekLocalStorage() {
     let temporaryListA = [];
     localStorage.setItem("activeUser", JSON.stringify(temporaryListA));
   }
+  
 });
 
 const userName = document.getElementById("user-name");

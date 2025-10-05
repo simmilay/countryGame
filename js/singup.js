@@ -1,5 +1,4 @@
-    let temporaryListC = [];
-
+let temporaryListC = [];
 
 /* if (!JSON.parse(localStorage.getItem("users"))) {
     localStorage.setItem("users", JSON.stringify(temporaryListC));  
@@ -43,15 +42,7 @@ singupBtn.addEventListener("click", async function addUser() {
     return;
   }
 
-  function idGenerator() {
-    const newId =  Date.now() + Math.floor(Math.random() * 100250 + 10000) + 25978;
-    let user = getLocalStorage("users");
-    const idCheck = user.find((element) => element.id === newId);
-    if(idCheck){
-      return idGenerator();
-    }
-    return newId;
-  }
+  
 
   const hashPass = await bcrypt.hash(userPassword.value, 10);
   console.log(hashPass);
@@ -60,11 +51,13 @@ singupBtn.addEventListener("click", async function addUser() {
     id: idGenerator(),
     userName: userName.value,
     userPassword: hashPass,
-    max_point: null,
+    maxScore: 0,
+    games: [],
+    createdAt: new Date().toISOString(),
   };
 
-   let user = getLocalStorage("users") || [];
-   if (!Array.isArray(user)) user  = [];
+  let user = getLocalStorage("users") || [];
+  if (!Array.isArray(user)) user = [];
 
   user.push(newUser);
 
